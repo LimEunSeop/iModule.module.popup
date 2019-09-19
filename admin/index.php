@@ -8,7 +8,7 @@
  * @author Arzz (arzz@arzz.com)
  * @license GPLv3
  * @version 3.1.0
- * @modified 2019. 9. 19.
+ * @modified 2019. 7. 18.
  */
 if (defined('__IM__') == false) exit;
 ?>
@@ -21,7 +21,6 @@ Ext.onReady(function () { Ext.getCmp("iModuleAdminPanel").add(
 		items:[
 			new Ext.grid.Panel({
 				id:"ModulePopupList",
-				iconCls:"xi xi-windows",
 				title:"팝업관리",
 				border:false,
 				layout:"fit",
@@ -49,9 +48,9 @@ Ext.onReady(function () { Ext.getCmp("iModuleAdminPanel").add(
 										}
 									} else {
 										if (e.getError()) {
-											Ext.Msg.show({title:Admin.getText("alert/error"),msg:e.getError(),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR});
+											Ext.Msg.show({title:Admin.getText("alert/error"),msg:e.getError(),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR})
 										} else {
-											Ext.Msg.show({title:Admin.getText("alert/error"),msg:Admin.getErrorText("DATA_LOAD_FAILED"),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR});
+											Ext.Msg.show({title:Admin.getText("alert/error"),msg:Admin.getErrorText("DATA_LOAD_FAILED"),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR})
 										}
 									}
 								}
@@ -108,9 +107,9 @@ Ext.onReady(function () { Ext.getCmp("iModuleAdminPanel").add(
 						load:function(store,records,success,e) {
 							if (success == false) {
 								if (e.getError()) {
-									Ext.Msg.show({title:Admin.getText("alert/error"),msg:e.getError(),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR});
+									Ext.Msg.show({title:Admin.getText("alert/error"),msg:e.getError(),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR})
 								} else {
-									Ext.Msg.show({title:Admin.getText("alert/error"),msg:Admin.getText("error/load"),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR});
+									Ext.Msg.show({title:Admin.getText("alert/error"),msg:Admin.getText("error/load"),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR})
 								}
 							}
 						}
@@ -196,7 +195,7 @@ Ext.onReady(function () { Ext.getCmp("iModuleAdminPanel").add(
 					itemcontextmenu:function(grid,record,item,index,e) {
 						var menu = new Ext.menu.Menu();
 						
-						menu.addTitle(record.data.title);
+						menu.add('<div class="x-menu-title">'+record.data.title+'</div>');
 						
 						menu.add({
 							iconCls:"xi xi-windows",
@@ -329,7 +328,7 @@ Ext.onReady(function () { Ext.getCmp("iModuleAdminPanel").add(
 					itemcontextmenu:function(grid,record,item,index,e) {
 						var menu = new Ext.menu.Menu();
 						
-						menu.addTitle(record.data.name);
+						menu.add('<div class="x-menu-title">'+record.data.name+'</div>');
 						
 						menu.add({
 							iconCls:"xi xi-key",
